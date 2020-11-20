@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateContactsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create($this->getTableName(), function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->morphs('model');
+            $table->string('type')->nullable();
+            $table->string('value')->nullable();
+            $table->json('custom_attributes')->nullable();
+            $table->integer('order_column')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists($this->getTableName());
+    }
+
+    public function getTableName()
+    {
+        return config('contactable.table-name');
+    }
+}

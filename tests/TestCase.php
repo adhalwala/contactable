@@ -1,40 +1,40 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Aecor\Contact\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Skeleton\SkeletonServiceProvider;
+use Aecor\Contact\ContactServiceProvider;
 
 class TestCase extends Orchestra
 {
     public function setUp(): void
     {
-        parent::setUp();
+        // parent::setUp();
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+        // Factory::guessFactoryNamesUsing(
+        //     fn (string $modelName) => 'Aecor\\Contact\\Database\\Factories\\'.class_basename($modelName).'Factory'
+        // );
     }
 
     protected function getPackageProviders($app)
     {
-        return [
-            SkeletonServiceProvider::class,
-        ];
+        // return [
+        //     ContactServiceProvider::class,
+        // ];
     }
 
     public function getEnvironmentSetUp($app)
     {
-        $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
+        // $app['config']->set('database.default', 'sqlite');
+        // $app['config']->set('database.connections.sqlite', [
+        //     'driver' => 'sqlite',
+        //     'database' => ':memory:',
+        //     'prefix' => '',
+        // ]);
 
         /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        include_once __DIR__.'/../database/migrations/create_contactable_table.php.stub';
         (new \CreatePackageTable())->up();
         */
     }
