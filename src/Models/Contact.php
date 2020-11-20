@@ -15,14 +15,14 @@ class Contact extends Model
 
     protected $casts = [
         'custom_attributes' => 'array',
-        'order_column' => 'integer'
+        'order_column' => 'integer',
     ];
 
     protected $fillable = [
         'type',
         'value',
         'custom_attributes',
-        'order_column'
+        'order_column',
     ];
 
     public function contactable()

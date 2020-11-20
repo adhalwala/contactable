@@ -2,9 +2,9 @@
 
 namespace Aecor\Contact\Tests;
 
+use Aecor\Contact\ContactServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Aecor\Contact\ContactServiceProvider;
 
 class TestCase extends Orchestra
 {

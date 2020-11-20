@@ -13,7 +13,8 @@ trait HasContact
         return $this->morphMany(Contact::class, 'model');
     }
 
-    public function addContact($data){
+    public function addContact($data)
+    {
         return $this->contacts()->create($data);
     }
 
