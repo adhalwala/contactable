@@ -66,7 +66,7 @@ $user->addContact([
 
 Add multiple contacts
 ``` php
-$user->addContact([
+$user->addManyContacts([
     [
         'type' => 'phone',
         'value' => '9999999999',
@@ -90,7 +90,6 @@ $user->contacts;
 Get contacts with condition
 ``` php
 $user->contacts()->where('type', 'mobile')->get();
-
 ```
 
 ## Changelog
