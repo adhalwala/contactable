@@ -20,8 +20,10 @@ trait HasContact
 
     public function addManyContacts(array $records)
     {
+        $contacts = [];
         foreach ($records as $record) {
-            $this->contacts()->create($record);
+            $contacts[] = $this->contacts()->create($record);
         }
+        return $contacts;
     }
 }
