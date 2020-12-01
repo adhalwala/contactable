@@ -24,6 +24,7 @@ trait HasContact
         foreach ($records as $record) {
             $contacts[] = $this->contacts()->create($record);
         }
+
         return $contacts;
     }
 }
